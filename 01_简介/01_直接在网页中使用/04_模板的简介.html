@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入 vue -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="root">
+        <!-- 如果直接将模板定义到网页中，此时模板必须符合 html 的规范 -->
+        <!-- My-Button -> my-button -->
+        <!-- 如果在组件中定义 template，则会优先使用 template 作为模板，同时根元素中的所有内容都会被替换 -->
+        <!-- 如果在 组件中没有定义 template，则会使用根元素的 innerHTML 作为模板 -->
+        <!-- <button @click='count++'>点我一下</button> - 点了 {{count}} 次 -->
+    </div>
+    
+    <script>
+
+        // 组件是用来创建组件实例的
+        // 创建一个按钮，可以显示按钮的点击次数
+        const Root = {
+            data(){
+                return {
+                    count: 0 // 记录点击次数
+                    // data 中的数据会自动和使用他的视图绑定，数据发生变化视图会自动刷新
+                }
+            },
+            
+            // template 是模板，决定组件最终的样子
+            // 定义模板的方式有 3 种： 1. 在组件中通过 template 属性指定
+            //                      2. 直接在网页的根元素中指定
+            //                      3.组件中通过 render() 直接渲染
+            template:"<button @click='count++'>点我一下</button> - 点了 {{count}} 次" // 希望组件在页面中呈现的样子
+        }
+
+        // // 创建 app 实例
+        // const app = Vue.createAPP(Root)
+
+        // // 将实例在页面中挂载
+        // app.mount("#root")
+
+        Vue.createApp(Root).mount("#root")
+
+
+    </script>
+</body>
+</html>
