@@ -7,7 +7,7 @@ const obj = {
 /* 
     如果直接修改对象属性，那么仅仅是修改了属性，没做其他事，此操作只会影响对象自身，不会导致元素的重新渲染
     希望在修改一个属性的同时可以进行一些其他操作，例如触发元素重新渲染
-    对对象改造：vue3 中使用的是代理模式来完成对象的改造
+    要实现这个目的，需要对对象改造：vue3 中使用的是代理模式来完成对象的改造
     设置代理时不会对原对象产生影响
 */
 // obj.name = "猪八戒"
@@ -46,3 +46,8 @@ const handler = {
 const proxy = new Proxy(obj, handler)
 
 console.log(proxy.name)
+
+
+// 修改代理的属性
+proxy.age = 28
+console.log(obj.age) // 结果是 28

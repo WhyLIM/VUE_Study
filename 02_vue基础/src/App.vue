@@ -7,8 +7,9 @@ export default {
     // 使用 vue 时，减少使用箭头函数
     data() {
         // console.log("data", this)
-        // 直接向组件实例中添加一个属性
-        // this.name = "孙悟空"
+        
+        // 直接向组件实例中添加的属性不会被 vue 代理，不是响应式数据，修改后页面不会发生变化
+        this.name = "孙悟空"
 
         // vm.$data 是实际的代理对象，通过 vm 可以直接访问到 $data 中的属性
         // vm.$data.msg 等价于 vm.msg
