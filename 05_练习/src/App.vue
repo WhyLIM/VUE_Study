@@ -26,15 +26,38 @@ const current = ref(0)
                     <div class="tab-item">
                         <!-- 图片 -->
                         <div class="photo">
-                            <img src="" alt="">
+                            <img src="/images/blackcry.jpg" alt="6">
                             <span>1</span>
                         </div>
                         <!-- 描述 -->
-                        <div class="desc"></div>
+                        <div class="desc">
+                            <span class="name">笑</span>
+                            <div class="hot-bar">
+                                <div class="inner">433760 热度</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div v-show="current === 1">球队</div>
+            <div v-show="current === 1">
+                <!-- 球队 -->
+                <div class="tab-list">
+                    <div class="tab-item">
+                        <!-- 图片 -->
+                        <div class="photo">
+                            <img src="/images/blackcry.jpg" alt="6">
+                            <span>1</span>
+                        </div>
+                        <!-- 描述 -->
+                        <div class="desc">
+                            <span class="name">笑</span>
+                            <div class="hot-bar">
+                                <div class="inner">433760 热度</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </template>
